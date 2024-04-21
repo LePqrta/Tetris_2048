@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 import lib.stddraw as stddraw  # stddraw is used as a basic graphics library
 from lib.color import Color # used for coloring the game grid
 from point import Point  # used for tile positions
@@ -280,4 +278,4 @@ class GameGrid:
       # After merging is done
       self.remove_full_rows()
       return self.game_over
->>>>>>> Stashed changes
+

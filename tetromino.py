@@ -1,5 +1,4 @@
-<<<<<<< Updated upstream
-=======
+
 from tile import Tile  # used for modeling  tiles on the tetromino
 from point import Point  # used for positions of tiles
 import copy as cp  #  for copying tiles and positions
@@ -227,4 +226,4 @@ class Tetromino:
                      return False
                   break  
       return True  
->>>>>>> Stashed changes
+

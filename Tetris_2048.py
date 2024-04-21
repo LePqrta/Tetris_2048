@@ -1,6 +1,3 @@
-<<<<<<< Updated upstream
-=======
-
 from game_grid import GameGrid # the class for modeling the game grid
 from tetromino import Tetromino # the class for modeling the tetrominoes
 import random # used for creating tetrominoes with random types/shapes
@@ -144,4 +141,4 @@ def create_canvas(the_grid_height, the_grid_width, info_grid_width):
 
 if __name__== '__main__':
    start()
->>>>>>> Stashed changes
+

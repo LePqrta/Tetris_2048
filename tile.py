@@ -1,5 +1,4 @@
-<<<<<<< Updated upstream
-=======
+
 import lib.stddraw as stddraw  # stddraw library is used as a basic graphics 
 from lib.color import Color  # used for coloring the tile and the number on it as understandable from the name
 import random
@@ -48,4 +47,4 @@ class Tile:
         stddraw.setFontSize(self.font_size)
         stddraw.text(position.x, position.y, str(self.number))
     stddraw.setPenRadius() 
->>>>>>> Stashed changes
+
