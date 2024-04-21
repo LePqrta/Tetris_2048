@@ -16,8 +16,8 @@ class Tile:
       # set the number on the tile
       self.number = 2 if random.randint(0,10) < 8 else 4
       # set the colors of the tile
-      self.background_color = Color(238, 240, 218) # background (tile) color
-      self.foreground_color = Color(119, 110, 101) # foreground (number) color
+      self.background_color = Color(50, 30, 32) # background (tile) color
+      self.foreground_color = Color(1, 21, 31) # foreground (number) color
       self.box_color = Color(160, 71, 225) # box (boundary) color
       self.font_size = 25
       self.is_connected = False
@@ -68,38 +68,26 @@ class Tile:
             }
       }
 
-   # change background color according to the number on the tile
-   def update_color(self):
-
-      if self.number in self.colors:
-         self.font_size = self.colors[self.number]['font']
-         return self.colors[self.number]['color']
-      else:
-         self.foreground_color = Color(240,240,240)
-         self.font_size = 16
-         return Color(60, 58, 51)
-
-   # Method for drawing the tile
-   def draw(self, position, length = 1.05, is_pred = False, next = False):
-      # draw the tile as a filled square
-      if is_pred:
-         stddraw.setPenColor(Color(42, 69, 99))
-      else:
-         self.background_color = self.update_color()
-         stddraw.setPenColor(self.background_color)
-      stddraw.filledSquare(position.x, position.y, length / 2)
-      # draw the bounding box around the tile as a square
-      if is_pred:
-         stddraw.setPenColor(Color(151, 178, 199))
-      else:
-         stddraw.setPenColor(self.box_color)
-      stddraw.setPenRadius(Tile.boundary_thickness)
-      stddraw.square(position.x, position.y, length / 2)
-      stddraw.setPenRadius()  # reset the pen radius to its default value
-      if not next:
-         # draw the number on the tileC:\Users\BT\Desktop\projecttetris
-         stddraw.setPenColor(self.foreground_color)
-         stddraw.setFontFamily(Tile.font_family)
-         stddraw.setFontSize(self.font_size)
-         stddraw.text(position.x, position.y, str(self.number))
-      stddraw.setPenRadius()  # reset the pen radius to its default value
+   def draw(self, position, length=1.05, is_pred=False, next=False):
+    # draw the tile as a filled square
+    if is_pred:
+        stddraw.setPenColor(Color(42, 69, 99))
+    else:
+        pink_color = Color(255, 192, 203)  # Pink color
+        stddraw.setPenColor(pink_color)
+    stddraw.filledSquare(position.x, position.y, length / 2)
+    # draw the bounding box around the tile as a square
+    if is_pred:
+        stddraw.setPenColor(Color(151, 178, 199))
+    else:
+        stddraw.setPenColor(self.box_color)
+    stddraw.setPenRadius(Tile.boundary_thickness)
+    stddraw.square(position.x, position.y, length / 2)
+    stddraw.setPenRadius()  # reset the pen radius to its default value
+    if not next:
+        # draw the number on the tile
+        stddraw.setPenColor(self.foreground_color)
+        stddraw.setFontFamily(Tile.font_family)
+        stddraw.setFontSize(self.font_size)
+        stddraw.text(position.x, position.y, str(self.number))
+    stddraw.setPenRadius() 
